@@ -13,15 +13,14 @@ class _EstructuraOperacionesBinarios
     extends State<EstructuraOperacionesBinarios> {
   TextEditingController inputBinario1 = TextEditingController();
   TextEditingController inputBinario2 = TextEditingController();
-  int binario1 = 0;
-  int binario2 = 0;
-  int resultado = 0;
+  var binario1;
+  var binario2;
+  var resultado;
 
   void controladorDeCampos(String valor, String inputCampoTexto) {
     setState(() {
       if (inputCampoTexto == 'binario1') {
         binario1 = int.parse(valor, radix: 2);
-        print(binario1);
       } else if (inputCampoTexto == 'binario2') {
         binario2 = int.parse(valor, radix: 2);
       }
@@ -39,23 +38,20 @@ class _EstructuraOperacionesBinarios
   }
 
   void operar(int binario1, int binario2, String operacion) {
-    // String textoOperacion = 'El resultado de la suma \n  \n \n \n \nes \n ${binario1 + binario2}';
-    String textoOperacion = '';
-    String operacion2 = '';
+    String textoOperacion = "";
 
-    setState(() {
-      if (operacion == 'sumar') {
-        resultado = binario1 + binario2;
-        operacion2 = 'suma';
-      } else if (operacion == 'restar') {
-        operacion2 = 'resta';
-        resultado = binario1 - binario2;
-      }
+    if (operacion == 'sumar') {
+      int suma = binario1 + binario2;
+      resultado = suma.toRadixString(2);
+      // resultado = binario1 + binario2;
       textoOperacion =
-          'El resultado de la $operacion2 es \n\n• $resultado en decimal.\n\n• ' +
-              resultado.toRadixString(2).padLeft(4, '0').toString() +
-              ' en binario.';
-    });
+          'El resultado de la suma es ${resultado.padLeft(4, '0').toString()}';
+    } else if (operacion == 'restar') {
+      int suma = binario1 + binario2;
+      resultado = suma.toRadixString(2);
+      // resultado = binario1 - binario2;
+      textoOperacion = 'El resultado de la resta es ${resultado.padLeft(4, '0').toString()}';
+    }
 
     AlertDialog dialog = AlertDialog(
       content: Text(textoOperacion),
@@ -78,18 +74,14 @@ class _EstructuraOperacionesBinarios
 
         TextButton(
             onPressed: () {
-              Clipboard.setData(new ClipboardData(
-                      text: resultado
-                          .toRadixString(2)
-                          .padLeft(4, '0')
-                          .toString()))
+              Clipboard.setData(new ClipboardData(text: resultado.toString()))
                   .then((_) {
                 // Scaffold.of(context).showSnackBar(
                 ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text("Copiado al portapepeles!")));
               });
             },
-            child: Text("Copiar número binario")),
+            child: Text("Copiar")),
 
         TextButton(
             onPressed: () {
@@ -108,13 +100,18 @@ class _EstructuraOperacionesBinarios
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+        // ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20, color: Colors.white), primary: Colors.green);
+        // ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20), primary: Colors.grey);
+        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+
     return Scaffold(
         body: Container(
             child: Center(
                 child: ListView(
       children: [
         Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Align(alignment: Alignment.center),
@@ -151,12 +148,15 @@ class _EstructuraOperacionesBinarios
                 Expanded(child: Divider()),
               ]),
               ElevatedButton(
-                  child: Text("Sumar", style: TextStyle(color: Colors.red)),
-                  onPressed: () => mostrarResultado('sumar')),
+                  style: style,
+                  child: Text("Sumar", style: TextStyle(color: Colors.green)),
+                  onPressed: () => mostrarResultado('suma')),
               ElevatedButton(
-                  child: Text("Restar", style: TextStyle(color: Colors.red)),
-                  onPressed: () => mostrarResultado('restar')),
+                  style: style,
+                  child: Text("Restar", style: TextStyle(color: Colors.grey)),
+                  onPressed: () => mostrarResultado('resta')),
               ElevatedButton(
+                  style: style,
                   child: Text("Limpiar campos",
                       style: TextStyle(color: Colors.red)),
                   onPressed: () => limpiarCampos()),

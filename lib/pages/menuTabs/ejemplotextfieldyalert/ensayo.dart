@@ -3,6 +3,8 @@
 // This sample shows how to get a value from a TextField via the [onSubmitted]
 // callback.
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -77,3 +79,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     );
   }
 }
+// Clipboard flutter
+// https://www.google.com/search?q=Clipboard+flutter&oq=Clipboard+flutter&aqs=chrome..69i57j69i60l3.3193j0j1&sourceid=chrome&ie=UTF-8
+
+// https://pub.dev/packages/clipboard
+
+// https://stackoverflow.com/questions/55885433/flutter-dart-how-to-add-copy-to-clipboard-on-tap-to-a-app
+
+// Material icons:
+// https://api.flutter.dev/flutter/material/Icons-class.html
+
+// TextField Class
+// https://api.flutter.dev/flutter/material/TextField-class.html

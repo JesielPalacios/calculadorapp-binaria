@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parcial_prog_movil/pages/menuTabs/conversionesNum/estructura.dart';
 import 'package:parcial_prog_movil/pages/menuTabs/ejemplotextfieldyalert/estructura.dart';
+import 'package:parcial_prog_movil/pages/menuTabs/operacionesBinarios/estructura.dart';
 import 'package:parcial_prog_movil/pages/menuTabs/operacionesLogicas/estructura.dart';
 import 'package:parcial_prog_movil/pages/tabbarpersonalizado.dart';
 
@@ -20,8 +21,8 @@ class _EjemploTabs extends State<EjemploTabs> {
           appBar: AppBar(title: Text("Parcial Programación Móvil")),
           body: TabBarView(
             children: [
+              EstructuraOperacionesBinarios(),
               EstructuraConversiones(),
-              VistaInputYAlert(),
               EstructuraOperacionesLogicas()
             ],
           ),
