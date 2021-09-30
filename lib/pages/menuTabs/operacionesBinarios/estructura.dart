@@ -40,7 +40,7 @@ class _EstructuraOperacionesBinarios
       if (binario1 <= 0 && binario2 <= 0) {
         AlertDialog dialog = AlertDialog(
           title: Text(
-            '                            ❌ Errro! ❌',
+            '                            ❌ Error! ❌',
             style: TextStyle(color: Colors.orange),
           ),
           content: Text(
@@ -145,21 +145,20 @@ class _EstructuraOperacionesBinarios
             Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Align(alignment: Alignment.center),
               Padding(
-                padding: EdgeInsets.all(16.0),
-                child: TextField(
-                    keyboardType: TextInputType.number,
-                    controller: inputBinario1,
-                    style: TextStyle(fontSize: 20, color: Colors.green),
-                    onChanged: (String value) =>
-                        controladorDeCampos(value, 'binario1'),
-                    decoration: InputDecoration(
-                      icon: Icon(Icons.checklist),
-                      labelText: "Toque para ingresar primer binario",
-                      hintText: "Binario 1",
-                      helperText: "En este campo sólo binarios.☝🏾",
-                      helperStyle: TextStyle(fontSize: 20.0),
-                    ))
-              ),
+                  padding: EdgeInsets.all(16.0),
+                  child: TextField(
+                      keyboardType: TextInputType.number,
+                      controller: inputBinario1,
+                      style: TextStyle(fontSize: 20, color: Colors.green),
+                      onChanged: (String value) =>
+                          controladorDeCampos(value, 'binario1'),
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.checklist),
+                        labelText: "Toque para ingresar primer binario",
+                        hintText: "Binario 1",
+                        helperText: "En este campo sólo binarios.☝🏾",
+                        helperStyle: TextStyle(fontSize: 20.0),
+                      ))),
               Row(children: <Widget>[
                 Expanded(child: Divider()),
               ]),
