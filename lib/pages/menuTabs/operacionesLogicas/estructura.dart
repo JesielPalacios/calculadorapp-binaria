@@ -123,7 +123,6 @@ class __EstructuraOperacionesLogicas
   Widget build(BuildContext context) {
     final ButtonStyle estilosOperar = ElevatedButton.styleFrom(
         textStyle: const TextStyle(fontSize: 20, color: Colors.black),
-        // padding: EdgeInsets.all(20),
         padding: EdgeInsets.only(left: 65, right: 65, bottom: 15, top: 15),
         primary: Colors.blue);
 
@@ -162,7 +161,6 @@ class __EstructuraOperacionesLogicas
                       ),
                     ),
                   ),
-                  // SizedBox(height: 20),
                   Padding(
                     padding: EdgeInsets.all(16.0),
                     child: TextField(
@@ -170,7 +168,6 @@ class __EstructuraOperacionesLogicas
                       style: TextStyle(fontSize: 20, color: Colors.green),
                       onChanged: (String value) async =>
                           controladorDeCampos(value, 'binario2'),
-                      // obscureText: true,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(4),
@@ -217,16 +214,3 @@ class __EstructuraOperacionesLogicas
         ))));
   }
 }
-
-// Búsqueda:
-// https://www.google.com/search?q=logical+operators+binary+numbers&sxsrf=AOaemvK6jsJDE8mkbiNsWCKjq5Zni0XRqQ%3A1632966104938&ei=2BVVYcLQOO6ZwbkPvtC10Ak&oq=logical+operators+binary+numbers&gs_lcp=Cgdnd3Mtd2l6EAMYATIICAAQFhAKEB4yBggAEBYQHjIGCAAQFhAeOgcIABBHELADOgQIIxAnOgQIABATOgUIABDLAUoFCDwSATJKBAhBGABQirQDWJvXA2Cx4wNoAnACeAKAAc4JiAGnHZIBDzAuNC4xLjEuMC4yLjAuMZgBAKABAcgBCMABAQ&sclient=gws-wiz
-
-// https://www.google.com/search?q=Bitwise+Operators+dart&oq=Bitwise+Operators+dart&aqs=chrome..69i57.2058j0j1&sourceid=chrome&ie=UTF-8
-
-// Dart Programming - Logical Operators
-// https://www.tutorialspoint.com/dart_programming/dart_programming_logical_operators.htm
-
-// https://www.tutorialspoint.com/dart_programming/dart_programming_operators.htm
-
-// Calculadora:
-// https://keisan.casio.com/exec/system/14495408631029

@@ -1,4 +1,3 @@
-// import 'package:clipboard_manager/clipboard_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -81,7 +80,6 @@ class _EstructuraOperacionesBinarios
             'El resultado de la $accion es:',
           ),
           content: Text(textoOperacion, style: TextStyle(color: Colors.white)),
-          // contentTextStyle: TextStyle(color: Colors.white),
           elevation: 24.0,
           backgroundColor: Colors.blue,
           titleTextStyle: TextStyle(
@@ -122,12 +120,8 @@ class _EstructuraOperacionesBinarios
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
-        // ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20, color: Colors.white), primary: Colors.green);
-        // ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20), primary: Colors.grey);
         ElevatedButton.styleFrom(
             textStyle: const TextStyle(fontSize: 20),
-            // padding: EdgeInsets.all(25.0),
-            // padding: EdgeInsets.symmetric(),
             padding: EdgeInsets.only(left: 65, right: 65, bottom: 15, top: 15),
             primary: Colors.green);
 
