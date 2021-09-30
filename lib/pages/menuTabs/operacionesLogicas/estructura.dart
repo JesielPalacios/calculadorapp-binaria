@@ -7,7 +7,8 @@ class EstructuraOperacionesLogicas extends StatefulWidget {
   }
 }
 
-class __EstructuraOperacionesLogicas extends State<EstructuraOperacionesLogicas> {
+class __EstructuraOperacionesLogicas
+    extends State<EstructuraOperacionesLogicas> {
   @override
   Widget build(BuildContext context) {
     return ListView(

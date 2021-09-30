@@ -16,6 +16,8 @@ class _EstructuraOperacionesBinarios
   int binario1 = 0;
   int binario2 = 0;
   int resultado = 0;
+  String textoOperacion = '';
+  String accion = '';
 
   void controladorDeCampos(String valor, String inputCampoTexto) {
     setState(() {
@@ -28,140 +30,182 @@ class _EstructuraOperacionesBinarios
     });
   }
 
-  void mostrarResultado(String operacion) {
-    String operacionFinal = operacion;
-    operar(binario1, binario2, operacionFinal);
-  }
-
   void limpiarCampos() {
     inputBinario1.text = "";
     inputBinario2.text = "";
   }
 
-  void operar(int binario1, int binario2, String operacion) {
-    // String textoOperacion = 'El resultado de la suma \n  \n \n \n \nes \n ${binario1 + binario2}';
-    String textoOperacion = '';
-    String operacion2 = '';
-
+  void operar(String operacion) {
     setState(() {
-      if (operacion == 'sumar') {
-        resultado = binario1 + binario2;
-        operacion2 = 'suma';
-      } else if (operacion == 'restar') {
-        operacion2 = 'resta';
-        resultado = binario1 - binario2;
+      if (binario1 <= 0 && binario2 <= 0) {
+        AlertDialog dialog = AlertDialog(
+          title: Text(
+            '                            ❌ Errro! ❌',
+            style: TextStyle(color: Colors.orange),
+          ),
+          content: Text(
+              'Ingrese por lo menos los dos números para hacer las operaciones.',
+              style: TextStyle(color: Colors.white)),
+          elevation: 24.0,
+          backgroundColor: Colors.blue,
+          titleTextStyle: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20.0),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Salir",
+                    style: TextStyle(color: Colors.white.withOpacity(0.6)))),
+          ],
+        );
+
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return dialog;
+            });
+      } else {
+        if (operacion == 'suma') {
+          resultado = binario1 + binario2;
+          accion = 'suma';
+        } else if (operacion == 'resta') {
+          accion = 'resta';
+          resultado = binario1 - binario2;
+        }
+        textoOperacion = '• En decimal: $resultado\n\n• En binario: ' +
+            resultado.toRadixString(2).padLeft(4, '0').toString();
+
+        AlertDialog dialog = AlertDialog(
+          title: Text(
+            'El resultado de la $accion es:',
+          ),
+          content: Text(textoOperacion, style: TextStyle(color: Colors.white)),
+          // contentTextStyle: TextStyle(color: Colors.white),
+          elevation: 24.0,
+          backgroundColor: Colors.blue,
+          titleTextStyle: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20.0),
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Clipboard.setData(new ClipboardData(
+                          text: resultado
+                              .toRadixString(2)
+                              .padLeft(100, '0')
+                              .toString()))
+                      .then((_) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text("Copiado al portapepeles!",
+                            style: TextStyle(color: Colors.white))));
+                  });
+                },
+                child: Text("Copiar número binario")),
+            TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Salir",
+                    style: TextStyle(color: Colors.white.withOpacity(0.6)))),
+          ],
+        );
+
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return dialog;
+            });
       }
-      textoOperacion =
-          'El resultado de la $operacion2 es \n\n• $resultado en decimal.\n\n• ' +
-              resultado.toRadixString(2).padLeft(4, '0').toString() +
-              ' en binario.';
     });
-
-    AlertDialog dialog = AlertDialog(
-      content: Text(textoOperacion),
-      actions: [
-        // TextButton(
-        //     onPressed: () {
-        //       ClipboardManager.copyToClipBoard(suma.toString()).then((result) {
-        //         final snackBar = SnackBar(
-        //           content: Text('Copiado al portapapeles.'),
-        //           action: SnackBarAction(
-        //             label: 'Undo',
-        //             onPressed: () {},
-        //           ),
-        //         );
-        //         // Scaffold.of(context).showSnackBar(snackBar);
-        //         ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        //       });
-        //     },
-        //     child: Text("Copiar")),
-
-        TextButton(
-            onPressed: () {
-              Clipboard.setData(new ClipboardData(
-                      text: resultado
-                          .toRadixString(2)
-                          .padLeft(4, '0')
-                          .toString()))
-                  .then((_) {
-                // Scaffold.of(context).showSnackBar(
-                ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("Copiado al portapepeles!")));
-              });
-            },
-            child: Text("Copiar número binario")),
-
-        TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text("Salir")),
-      ],
-    );
-
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return dialog;
-        });
   }
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+        // ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20, color: Colors.white), primary: Colors.green);
+        // ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20), primary: Colors.grey);
+        ElevatedButton.styleFrom(
+            textStyle: const TextStyle(fontSize: 20),
+            // padding: EdgeInsets.all(25.0),
+            // padding: EdgeInsets.symmetric(),
+            padding: EdgeInsets.only(left: 65, right: 65, bottom: 15, top: 15),
+            primary: Colors.green);
+
+    final ButtonStyle eliminar = ElevatedButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 20, color: Colors.orange),
+        padding: EdgeInsets.only(left: 22.5, right: 22.5, bottom: 15, top: 15),
+        primary: Colors.red);
+
     return Scaffold(
+        appBar: AppBar(title: Text("Parcial Programación Móvil - Punto #2")),
         body: Container(
             child: Center(
                 child: ListView(
-      children: [
-        Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
+          children: [
+            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Align(alignment: Alignment.center),
-              TextField(
-                  keyboardType: TextInputType.number,
-                  controller: inputBinario1,
-                  style: TextStyle(fontSize: 14, color: Colors.green),
-                  onChanged: (String value) =>
-                      controladorDeCampos(value, 'binario1'),
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.checklist),
-                    labelText: "Toque para ingresar primer binario",
-                    hintText: "Binario 2",
-                    helperText: "En este campo sólo binarios.☝🏾",
-                    helperStyle: TextStyle(fontSize: 14.0),
-                  )),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: TextField(
+                    keyboardType: TextInputType.number,
+                    controller: inputBinario1,
+                    style: TextStyle(fontSize: 20, color: Colors.green),
+                    onChanged: (String value) =>
+                        controladorDeCampos(value, 'binario1'),
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.checklist),
+                      labelText: "Toque para ingresar primer binario",
+                      hintText: "Binario 1",
+                      helperText: "En este campo sólo binarios.☝🏾",
+                      helperStyle: TextStyle(fontSize: 20.0),
+                    ))
+              ),
               Row(children: <Widget>[
                 Expanded(child: Divider()),
               ]),
-              TextField(
-                  keyboardType: TextInputType.number,
-                  controller: inputBinario2,
-                  style: TextStyle(fontSize: 14, color: Colors.green),
-                  onChanged: (String value) =>
-                      controladorDeCampos(value, 'binario2'),
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.checklist),
-                    labelText: "Toque para ingresar segundo binario",
-                    hintText: "Binario 2",
-                    helperText: "En este campo sólo binarios.☝🏾",
-                    helperStyle: TextStyle(fontSize: 14.0),
-                  )),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: TextField(
+                    keyboardType: TextInputType.number,
+                    controller: inputBinario2,
+                    style: TextStyle(fontSize: 20, color: Colors.green),
+                    onChanged: (String value) =>
+                        controladorDeCampos(value, 'binario2'),
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.checklist),
+                      labelText: "Toque para ingresar segundo binario",
+                      hintText: "Binario 2",
+                      helperText: "En este campo sólo binarios.☝🏾",
+                      helperStyle: TextStyle(fontSize: 20.0),
+                    )),
+              ),
               Row(children: <Widget>[
                 Expanded(child: Divider()),
               ]),
-              ElevatedButton(
-                  child: Text("Sumar", style: TextStyle(color: Colors.red)),
-                  onPressed: () => mostrarResultado('sumar')),
-              ElevatedButton(
-                  child: Text("Restar", style: TextStyle(color: Colors.red)),
-                  onPressed: () => mostrarResultado('restar')),
-              ElevatedButton(
-                  child: Text("Limpiar campos",
-                      style: TextStyle(color: Colors.red)),
-                  onPressed: () => limpiarCampos()),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: ElevatedButton(
+                    style: style,
+                    child: Text("Sumar ➕"),
+                    onPressed: () => operar('suma')),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 0),
+                child: ElevatedButton(
+                    style: style,
+                    child: Text("Restar ➖"),
+                    onPressed: () => operar('resta')),
+              ),
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: ElevatedButton(
+                    style: eliminar,
+                    child: Text("Limpiar campos 🕳",
+                        style: TextStyle(color: Colors.black)),
+                    onPressed: () => limpiarCampos()),
+              ),
             ])
-      ],
-    ))));
+          ],
+        ))));
   }
 }

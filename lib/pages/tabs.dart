@@ -18,11 +18,10 @@ class _EjemploTabs extends State<EjemploTabs> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-          appBar: AppBar(title: Text("Parcial Programación Móvil")),
           body: TabBarView(
             children: [
-              EstructuraOperacionesBinarios(),
               EstructuraConversiones(),
+              EstructuraOperacionesBinarios(),
               EstructuraOperacionesLogicas()
             ],
           ),
