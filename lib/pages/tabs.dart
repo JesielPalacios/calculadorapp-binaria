@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/conversionesNum/estructura.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/ejemplotextfieldyalert/estructura.dart';
+import 'package:parcial_prog_movil/pages/menuTabs/conversionesNumericas/estructura.dart';
 import 'package:parcial_prog_movil/pages/menuTabs/operacionesBinarios/estructura.dart';
 import 'package:parcial_prog_movil/pages/menuTabs/operacionesLogicas/estructura.dart';
 import 'package:parcial_prog_movil/pages/tabbarpersonalizado.dart';
 
-class EjemploTabs extends StatefulWidget {
+class NavegacionMenuTabBar extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _EjemploTabs();
+    return _NavegacionMenuTabBar();
   }
 }
 
-class _EjemploTabs extends State<EjemploTabs> {
+class _NavegacionMenuTabBar extends State<NavegacionMenuTabBar> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -33,7 +32,7 @@ class _EjemploTabs extends State<EjemploTabs> {
                   indicatorColor: Colors.white,
                   tabs: [
                     Tab(
-                        text: 'Conversión',
+                        text: 'Conversor',
                         icon: Icon(Icons.transform),
                         iconMargin: const EdgeInsets.only(bottom: 2.0)),
                     Tab(

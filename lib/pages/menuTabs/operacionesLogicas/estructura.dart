@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:parcial_prog_movil/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
 
 class EstructuraOperacionesLogicas extends StatefulWidget {
   @override
@@ -47,7 +48,7 @@ class __EstructuraOperacionesLogicas
       elevation: 24.0,
       backgroundColor: Colors.blue,
       titleTextStyle: TextStyle(
-          fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20.0),
+          fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15.0),
       actions: [
         TextButton(
             onPressed: () {
@@ -121,13 +122,8 @@ class __EstructuraOperacionesLogicas
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle estilosOperar = ElevatedButton.styleFrom(
-        textStyle: const TextStyle(fontSize: 20, color: Colors.black),
-        padding: EdgeInsets.only(left: 65, right: 65, bottom: 15, top: 15),
-        primary: Colors.blue);
-
     return Scaffold(
-        appBar: AppBar(title: Text("Parcial Programación Móvil - Punto #3")),
+        appBar: AppBar(title: Text("Parcial Programación Móvil")),
         body: Container(
             child: Center(
                 child: ListView(
@@ -140,8 +136,9 @@ class __EstructuraOperacionesLogicas
                   Padding(
                     padding: EdgeInsets.all(16.0),
                     child: TextField(
+                      keyboardType: TextInputType.number,
                       controller: valor1,
-                      style: TextStyle(fontSize: 20, color: Colors.green),
+                      style: TextStyle(fontSize: 15, color: Colors.green),
                       onChanged: (String value) async =>
                           controladorDeCampos(value, 'binario1'),
                       decoration: InputDecoration(
@@ -152,20 +149,23 @@ class __EstructuraOperacionesLogicas
                           Icons.exposure_zero,
                           color: Colors.black,
                         ),
-                        //icon: Icon(Icons.account_circle_outlined, color: Colors.black,),
-                        labelText: "Toque para ingresar primer binario",
+                        labelText: "Ingrese aquí el primer binario",
                         hintText: "Binario 1",
                         hintStyle: TextStyle(color: Colors.black),
                         helperText: "En este campo sólo binarios.☝🏾",
-                        helperStyle: TextStyle(fontSize: 20.0),
+                        helperStyle: TextStyle(fontSize: 15.0),
                       ),
                     ),
                   ),
+                  Row(children: <Widget>[
+                    Expanded(child: Divider(height: 5)),
+                  ]),
                   Padding(
                     padding: EdgeInsets.all(16.0),
                     child: TextField(
+                      keyboardType: TextInputType.number,
                       controller: valor2,
-                      style: TextStyle(fontSize: 20, color: Colors.green),
+                      style: TextStyle(fontSize: 15, color: Colors.green),
                       onChanged: (String value) async =>
                           controladorDeCampos(value, 'binario2'),
                       decoration: InputDecoration(
@@ -175,40 +175,17 @@ class __EstructuraOperacionesLogicas
                         ),
                         prefixIcon:
                             Icon(Icons.exposure_plus_1, color: Colors.black),
-                        labelText: "Toque para ingresar segundo binario",
+                        labelText: "Ingrese aquí el segundo binario",
                         hintText: "Binario 2",
                         hintStyle: TextStyle(color: Colors.black),
                         helperText: "En este campo sólo binarios.☝🏾",
-                        helperStyle: TextStyle(fontSize: 20.0),
+                        helperStyle: TextStyle(fontSize: 15.0),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: ElevatedButton(
-                        style: estilosOperar,
-                        child: Text("Operación AND"),
-                        onPressed: () => operar('and')),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(0),
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            textStyle:
-                                TextStyle(fontSize: 20, color: Colors.black),
-                            padding: EdgeInsets.only(
-                                left: 71, right: 71, bottom: 15, top: 15),
-                            primary: Colors.blue),
-                        child: Text("Operación OR"),
-                        onPressed: () => operar('or')),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: ElevatedButton(
-                        style: estilosOperar,
-                        child: Text("Operación XOR"),
-                        onPressed: () => operar('xor')),
-                  ),
+                  boton(operar, 'and', 'Operación AND'),
+                  boton(operar, 'or', ' Operación OR '),
+                  boton(operar, 'xor', 'Operación XOR'),
                 ]))
           ],
         ))));
