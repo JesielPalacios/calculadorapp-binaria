@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:parcial_prog_movil/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
 
 class EstructuraOperacionesBinarios extends StatefulWidget {
   @override
@@ -29,9 +30,11 @@ class _EstructuraOperacionesBinarios
     });
   }
 
-  void limpiarCampos() {
+  void limpiarCampos([dynamic valorDefecto]) {
     inputBinario1.text = "";
     inputBinario2.text = "";
+    binario1 = 0;
+    binario2 = 0;
   }
 
   void operar(String operacion) {
@@ -48,7 +51,7 @@ class _EstructuraOperacionesBinarios
           elevation: 24.0,
           backgroundColor: Colors.blue,
           titleTextStyle: TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20.0),
+              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15),
           actions: [
             TextButton(
                 onPressed: () {
@@ -83,7 +86,7 @@ class _EstructuraOperacionesBinarios
           elevation: 24.0,
           backgroundColor: Colors.blue,
           titleTextStyle: TextStyle(
-              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20.0),
+              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15),
           actions: [
             TextButton(
                 onPressed: () {
@@ -119,19 +122,18 @@ class _EstructuraOperacionesBinarios
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-        ElevatedButton.styleFrom(
-            textStyle: const TextStyle(fontSize: 20),
-            padding: EdgeInsets.only(left: 65, right: 65, bottom: 15, top: 15),
-            primary: Colors.green);
+    final ButtonStyle style = ElevatedButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 15),
+        padding: EdgeInsets.only(left: 62, right: 62, bottom: 15, top: 15),
+        primary: Colors.green);
 
-    final ButtonStyle eliminar = ElevatedButton.styleFrom(
-        textStyle: const TextStyle(fontSize: 20, color: Colors.orange),
-        padding: EdgeInsets.only(left: 22.5, right: 22.5, bottom: 15, top: 15),
-        primary: Colors.red);
+    // final ButtonStyle eliminar = ElevatedButton.styleFrom(
+    //     textStyle: const TextStyle(fontSize: 15, color: Colors.orange),
+    //     padding: EdgeInsets.only(left: 22.5, right: 22.5, bottom: 15, top: 15),
+    //     primary: Colors.red);
 
     return Scaffold(
-        appBar: AppBar(title: Text("Parcial Programación Móvil - Punto #2")),
+        appBar: AppBar(title: Text("Parcial Programación Móvil")),
         body: Container(
             child: Center(
                 child: ListView(
@@ -139,11 +141,11 @@ class _EstructuraOperacionesBinarios
             Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Align(alignment: Alignment.center),
               Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(10),
                   child: TextField(
                       keyboardType: TextInputType.number,
                       controller: inputBinario1,
-                      style: TextStyle(fontSize: 20, color: Colors.green),
+                      style: TextStyle(fontSize: 15, color: Colors.green),
                       onChanged: (String value) =>
                           controladorDeCampos(value, 'binario1'),
                       decoration: InputDecoration(
@@ -151,17 +153,18 @@ class _EstructuraOperacionesBinarios
                         labelText: "Toque para ingresar primer binario",
                         hintText: "Binario 1",
                         helperText: "En este campo sólo binarios.☝🏾",
-                        helperStyle: TextStyle(fontSize: 20.0),
+                        helperStyle: TextStyle(fontSize: 15),
                       ))),
+
               Row(children: <Widget>[
-                Expanded(child: Divider()),
+                Expanded(child: Divider(height: 5)),
               ]),
               Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(10),
                 child: TextField(
                     keyboardType: TextInputType.number,
                     controller: inputBinario2,
-                    style: TextStyle(fontSize: 20, color: Colors.green),
+                    style: TextStyle(fontSize: 15, color: Colors.green),
                     onChanged: (String value) =>
                         controladorDeCampos(value, 'binario2'),
                     decoration: InputDecoration(
@@ -169,19 +172,21 @@ class _EstructuraOperacionesBinarios
                       labelText: "Toque para ingresar segundo binario",
                       hintText: "Binario 2",
                       helperText: "En este campo sólo binarios.☝🏾",
-                      helperStyle: TextStyle(fontSize: 20.0),
+                      helperStyle: TextStyle(fontSize: 15),
                     )),
               ),
               Row(children: <Widget>[
-                Expanded(child: Divider()),
+                Expanded(child: Divider(height: 5)),
               ]),
+
               Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(15.0),
                 child: ElevatedButton(
                     style: style,
                     child: Text("Sumar ➕"),
                     onPressed: () => operar('suma')),
               ),
+
               Padding(
                 padding: EdgeInsets.only(bottom: 0),
                 child: ElevatedButton(
@@ -189,14 +194,15 @@ class _EstructuraOperacionesBinarios
                     child: Text("Restar ➖"),
                     onPressed: () => operar('resta')),
               ),
-              Padding(
-                padding: EdgeInsets.all(16.0),
-                child: ElevatedButton(
-                    style: eliminar,
-                    child: Text("Limpiar campos 🕳",
-                        style: TextStyle(color: Colors.black)),
-                    onPressed: () => limpiarCampos()),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.all(10),
+              //   child: ElevatedButton(
+              //       style: eliminar,
+              //       child: Text("Limpiar campos 🕳",
+              //           style: TextStyle(color: Colors.black)),
+              //       onPressed: () => limpiarCampos()),
+              // ),
+              mostrarBotonLimpiarCampos(limpiarCampos)
             ])
           ],
         ))));
