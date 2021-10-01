@@ -4,14 +4,14 @@ import 'package:parcial_prog_movil/pages/menuTabs/operacionesBinarios/estructura
 import 'package:parcial_prog_movil/pages/menuTabs/operacionesLogicas/estructura.dart';
 import 'package:parcial_prog_movil/pages/tabbarpersonalizado.dart';
 
-class EjemploTabs extends StatefulWidget {
+class NavegacionMenuTabBar extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _EjemploTabs();
+    return _NavegacionMenuTabBar();
   }
 }
 
-class _EjemploTabs extends State<EjemploTabs> {
+class _NavegacionMenuTabBar extends State<NavegacionMenuTabBar> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

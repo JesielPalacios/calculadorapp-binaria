@@ -127,11 +127,6 @@ class _EstructuraOperacionesBinarios
         padding: EdgeInsets.only(left: 62, right: 62, bottom: 15, top: 15),
         primary: Colors.green);
 
-    // final ButtonStyle eliminar = ElevatedButton.styleFrom(
-    //     textStyle: const TextStyle(fontSize: 15, color: Colors.orange),
-    //     padding: EdgeInsets.only(left: 22.5, right: 22.5, bottom: 15, top: 15),
-    //     primary: Colors.red);
-
     return Scaffold(
         appBar: AppBar(title: Text("Parcial Programación Móvil")),
         body: Container(
@@ -194,14 +189,6 @@ class _EstructuraOperacionesBinarios
                     child: Text("Restar ➖"),
                     onPressed: () => operar('resta')),
               ),
-              // Padding(
-              //   padding: EdgeInsets.all(10),
-              //   child: ElevatedButton(
-              //       style: eliminar,
-              //       child: Text("Limpiar campos 🕳",
-              //           style: TextStyle(color: Colors.black)),
-              //       onPressed: () => limpiarCampos()),
-              // ),
               mostrarBotonLimpiarCampos(limpiarCampos)
             ])
           ],

@@ -127,8 +127,7 @@ class _EstructuraConversiones extends State<EstructuraConversiones> {
                         helperText: "Sólo hexadecimales.☝🏾",
                         helperStyle: TextStyle(fontSize: 15),
                       ))),
-              boton(limpiarCampos, 'Limpiar campos', '', true),
-              // mostrarBotonLimpiarCampos(limpiarCampos)
+              mostrarBotonLimpiarCampos(limpiarCampos)
             ])
           ],
         ))));

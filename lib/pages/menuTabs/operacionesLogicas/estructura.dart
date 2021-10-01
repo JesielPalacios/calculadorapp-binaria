@@ -136,6 +136,7 @@ class __EstructuraOperacionesLogicas
                   Padding(
                     padding: EdgeInsets.all(16.0),
                     child: TextField(
+                      keyboardType: TextInputType.number,
                       controller: valor1,
                       style: TextStyle(fontSize: 15, color: Colors.green),
                       onChanged: (String value) async =>
@@ -148,8 +149,7 @@ class __EstructuraOperacionesLogicas
                           Icons.exposure_zero,
                           color: Colors.black,
                         ),
-                        //icon: Icon(Icons.account_circle_outlined, color: Colors.black,),
-                        labelText: "Toque para ingresar primer binario",
+                        labelText: "Ingrese aquí el primer binario",
                         hintText: "Binario 1",
                         hintStyle: TextStyle(color: Colors.black),
                         helperText: "En este campo sólo binarios.☝🏾",
@@ -163,6 +163,7 @@ class __EstructuraOperacionesLogicas
                   Padding(
                     padding: EdgeInsets.all(16.0),
                     child: TextField(
+                      keyboardType: TextInputType.number,
                       controller: valor2,
                       style: TextStyle(fontSize: 15, color: Colors.green),
                       onChanged: (String value) async =>
@@ -174,7 +175,7 @@ class __EstructuraOperacionesLogicas
                         ),
                         prefixIcon:
                             Icon(Icons.exposure_plus_1, color: Colors.black),
-                        labelText: "Toque para ingresar segundo binario",
+                        labelText: "Ingrese aquí el segundo binario",
                         hintText: "Binario 2",
                         hintStyle: TextStyle(color: Colors.black),
                         helperText: "En este campo sólo binarios.☝🏾",
@@ -182,9 +183,9 @@ class __EstructuraOperacionesLogicas
                       ),
                     ),
                   ),
-                  boton(operar, 'and', 'Operación AND', false),
-                  boton(operar, 'or', ' Operación OR ', false),
-                  boton(operar, 'xor', 'Operación XOR', false),
+                  boton(operar, 'and', 'Operación AND'),
+                  boton(operar, 'or', ' Operación OR '),
+                  boton(operar, 'xor', 'Operación XOR'),
                 ]))
           ],
         ))));
