@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.parcial_prog_movil">
+    package="com.example.CalculadorApp">
    <application
-        android:label="parcial_prog_movil"
+        android:label="CalculadorApp"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

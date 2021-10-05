@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
+import 'package:CalculadorApp/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
 
 class EstructuraOperacionesLogicas extends StatefulWidget {
   @override

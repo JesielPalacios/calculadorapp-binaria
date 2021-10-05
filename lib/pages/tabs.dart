@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/conversionesNumericas/estructura.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/operacionesBinarios/estructura.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/operacionesLogicas/estructura.dart';
-import 'package:parcial_prog_movil/pages/tabbarpersonalizado.dart';
+import 'package:CalculadorApp/pages/menuTabs/conversionesNumericas/estructura.dart';
+import 'package:CalculadorApp/pages/menuTabs/operacionesBinarios/estructura.dart';
+import 'package:CalculadorApp/pages/menuTabs/operacionesLogicas/estructura.dart';
+import 'package:CalculadorApp/pages/tabbarpersonalizado.dart';
 
 class NavegacionMenuTabBar extends StatefulWidget {
   @override

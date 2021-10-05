@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
+import 'package:CalculadorApp/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
 
 class EstructuraConversiones extends StatefulWidget {
   @override

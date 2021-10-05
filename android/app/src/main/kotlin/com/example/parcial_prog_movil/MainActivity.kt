@@ -1,4 +1,4 @@
-package com.example.parcial_prog_movil
+package com.example.CalculadorApp
 
 import io.flutter.embedding.android.FlutterActivity
 

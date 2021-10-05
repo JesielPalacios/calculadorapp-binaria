@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
+import 'package:CalculadorApp/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
 
 class EstructuraOperacionesBinarios extends StatefulWidget {
   @override
@@ -150,7 +150,6 @@ class _EstructuraOperacionesBinarios
                         helperText: "En este campo sólo binarios.☝🏾",
                         helperStyle: TextStyle(fontSize: 15),
                       ))),
-
               Row(children: <Widget>[
                 Expanded(child: Divider(height: 5)),
               ]),
@@ -173,7 +172,6 @@ class _EstructuraOperacionesBinarios
               Row(children: <Widget>[
                 Expanded(child: Divider(height: 5)),
               ]),
-
               Padding(
                 padding: EdgeInsets.all(15.0),
                 child: ElevatedButton(
@@ -181,7 +179,6 @@ class _EstructuraOperacionesBinarios
                     child: Text("Sumar ➕"),
                     onPressed: () => operar('suma')),
               ),
-
               Padding(
                 padding: EdgeInsets.only(bottom: 0),
                 child: ElevatedButton(
