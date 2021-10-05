@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
+import 'package:CalculadorApp/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
 
 class EstructuraOperacionesBinarios extends StatefulWidget {
   @override
@@ -128,70 +128,66 @@ class _EstructuraOperacionesBinarios
         primary: Colors.green);
 
     return Scaffold(
-        appBar: AppBar(title: Text("Parcial Programación Móvil")),
         body: Container(
             child: Center(
                 child: ListView(
-          children: [
-            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Align(alignment: Alignment.center),
-              Padding(
-                  padding: EdgeInsets.all(10),
-                  child: TextField(
-                      keyboardType: TextInputType.number,
-                      controller: inputBinario1,
-                      style: TextStyle(fontSize: 15, color: Colors.green),
-                      onChanged: (String value) =>
-                          controladorDeCampos(value, 'binario1'),
-                      decoration: InputDecoration(
-                        icon: Icon(Icons.checklist),
-                        labelText: "Toque para ingresar primer binario",
-                        hintText: "Binario 1",
-                        helperText: "En este campo sólo binarios.☝🏾",
-                        helperStyle: TextStyle(fontSize: 15),
-                      ))),
-
-              Row(children: <Widget>[
-                Expanded(child: Divider(height: 5)),
-              ]),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: TextField(
-                    keyboardType: TextInputType.number,
-                    controller: inputBinario2,
-                    style: TextStyle(fontSize: 15, color: Colors.green),
-                    onChanged: (String value) =>
-                        controladorDeCampos(value, 'binario2'),
-                    decoration: InputDecoration(
-                      icon: Icon(Icons.checklist),
-                      labelText: "Toque para ingresar segundo binario",
-                      hintText: "Binario 2",
-                      helperText: "En este campo sólo binarios.☝🏾",
-                      helperStyle: TextStyle(fontSize: 15),
-                    )),
-              ),
-              Row(children: <Widget>[
-                Expanded(child: Divider(height: 5)),
-              ]),
-
-              Padding(
-                padding: EdgeInsets.all(15.0),
-                child: ElevatedButton(
-                    style: style,
-                    child: Text("Sumar ➕"),
-                    onPressed: () => operar('suma')),
-              ),
-
-              Padding(
-                padding: EdgeInsets.only(bottom: 0),
-                child: ElevatedButton(
-                    style: style,
-                    child: Text("Restar ➖"),
-                    onPressed: () => operar('resta')),
-              ),
-              mostrarBotonLimpiarCampos(limpiarCampos)
-            ])
-          ],
-        ))));
+      children: [
+        Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Align(alignment: Alignment.center),
+          Padding(
+              padding: EdgeInsets.all(10),
+              child: TextField(
+                  keyboardType: TextInputType.number,
+                  controller: inputBinario1,
+                  style: TextStyle(fontSize: 15, color: Colors.green),
+                  onChanged: (String value) =>
+                      controladorDeCampos(value, 'binario1'),
+                  decoration: InputDecoration(
+                    icon: Icon(Icons.checklist),
+                    labelText: "Toque para ingresar primer binario",
+                    hintText: "Binario 1",
+                    helperText: "En este campo sólo binarios.☝🏾",
+                    helperStyle: TextStyle(fontSize: 15),
+                  ))),
+          Row(children: <Widget>[
+            Expanded(child: Divider(height: 5)),
+          ]),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextField(
+                keyboardType: TextInputType.number,
+                controller: inputBinario2,
+                style: TextStyle(fontSize: 15, color: Colors.green),
+                onChanged: (String value) =>
+                    controladorDeCampos(value, 'binario2'),
+                decoration: InputDecoration(
+                  icon: Icon(Icons.checklist),
+                  labelText: "Toque para ingresar segundo binario",
+                  hintText: "Binario 2",
+                  helperText: "En este campo sólo binarios.☝🏾",
+                  helperStyle: TextStyle(fontSize: 15),
+                )),
+          ),
+          Row(children: <Widget>[
+            Expanded(child: Divider(height: 5)),
+          ]),
+          Padding(
+            padding: EdgeInsets.all(15.0),
+            child: ElevatedButton(
+                style: style,
+                child: Text("Sumar ➕"),
+                onPressed: () => operar('suma')),
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 0),
+            child: ElevatedButton(
+                style: style,
+                child: Text("Restar ➖"),
+                onPressed: () => operar('resta')),
+          ),
+          mostrarBotonLimpiarCampos(limpiarCampos)
+        ])
+      ],
+    ))));
   }
 }

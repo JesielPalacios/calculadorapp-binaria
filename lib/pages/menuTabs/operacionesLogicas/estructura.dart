@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:parcial_prog_movil/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
+import 'package:CalculadorApp/pages/menuTabs/widgesPersonalizados/estilosBotones.dart';
 
 class EstructuraOperacionesLogicas extends StatefulWidget {
   @override
@@ -123,71 +123,68 @@ class __EstructuraOperacionesLogicas
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Parcial Programación Móvil")),
         body: Container(
             child: Center(
                 child: ListView(
-          children: [
-            Form(
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                  Align(alignment: Alignment.center),
-                  Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      controller: valor1,
-                      style: TextStyle(fontSize: 15, color: Colors.green),
-                      onChanged: (String value) async =>
-                          controladorDeCampos(value, 'binario1'),
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4),
-                            borderSide: BorderSide(color: Colors.blue)),
-                        prefixIcon: Icon(
-                          Icons.exposure_zero,
-                          color: Colors.black,
-                        ),
-                        labelText: "Ingrese aquí el primer binario",
-                        hintText: "Binario 1",
-                        hintStyle: TextStyle(color: Colors.black),
-                        helperText: "En este campo sólo binarios.☝🏾",
-                        helperStyle: TextStyle(fontSize: 15.0),
-                      ),
-                    ),
-                  ),
-                  Row(children: <Widget>[
-                    Expanded(child: Divider(height: 5)),
-                  ]),
-                  Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      controller: valor2,
-                      style: TextStyle(fontSize: 15, color: Colors.green),
-                      onChanged: (String value) async =>
-                          controladorDeCampos(value, 'binario2'),
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(4),
-                          borderSide: BorderSide(color: Colors.blue),
-                        ),
-                        prefixIcon:
-                            Icon(Icons.exposure_plus_1, color: Colors.black),
-                        labelText: "Ingrese aquí el segundo binario",
-                        hintText: "Binario 2",
-                        hintStyle: TextStyle(color: Colors.black),
-                        helperText: "En este campo sólo binarios.☝🏾",
-                        helperStyle: TextStyle(fontSize: 15.0),
-                      ),
-                    ),
-                  ),
-                  boton(operar, 'and', 'Operación AND'),
-                  boton(operar, 'or', ' Operación OR '),
-                  boton(operar, 'xor', 'Operación XOR'),
-                ]))
-          ],
-        ))));
+      children: [
+        Form(
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Align(alignment: Alignment.center),
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: TextField(
+              keyboardType: TextInputType.number,
+              controller: valor1,
+              style: TextStyle(fontSize: 15, color: Colors.green),
+              onChanged: (String value) async =>
+                  controladorDeCampos(value, 'binario1'),
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(4),
+                    borderSide: BorderSide(color: Colors.blue)),
+                prefixIcon: Icon(
+                  Icons.exposure_zero,
+                  color: Colors.black,
+                ),
+                labelText: "Ingrese aquí el primer binario",
+                hintText: "Binario 1",
+                hintStyle: TextStyle(color: Colors.black),
+                helperText: "En este campo sólo binarios.☝🏾",
+                helperStyle: TextStyle(fontSize: 15.0),
+              ),
+            ),
+          ),
+          Row(children: <Widget>[
+            Expanded(child: Divider(height: 5)),
+          ]),
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: TextField(
+              keyboardType: TextInputType.number,
+              controller: valor2,
+              style: TextStyle(fontSize: 15, color: Colors.green),
+              onChanged: (String value) async =>
+                  controladorDeCampos(value, 'binario2'),
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(4),
+                  borderSide: BorderSide(color: Colors.blue),
+                ),
+                prefixIcon: Icon(Icons.exposure_plus_1, color: Colors.black),
+                labelText: "Ingrese aquí el segundo binario",
+                hintText: "Binario 2",
+                hintStyle: TextStyle(color: Colors.black),
+                helperText: "En este campo sólo binarios.☝🏾",
+                helperStyle: TextStyle(fontSize: 15.0),
+              ),
+            ),
+          ),
+          boton(operar, 'and', 'Operación AND'),
+          boton(operar, 'or', ' Operación OR '),
+          boton(operar, 'xor', 'Operación XOR'),
+        ]))
+      ],
+    ))));
   }
 }

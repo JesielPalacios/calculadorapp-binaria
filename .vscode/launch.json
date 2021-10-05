@@ -5,12 +5,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "parcial_prog_movil",
+      "name": "CalculadorApp",
       "request": "launch",
       "type": "dart"
     },
     {
-      "name": "parcial_prog_movil (profile mode)",
+      "name": "CalculadorApp (profile mode)",
       "request": "launch",
       "type": "dart",
       "flutterMode": "profile"

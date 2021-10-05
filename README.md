@@ -3,11 +3,12 @@
 Esta es una caculadora de operaciones binarias desarrollada en dart con el framework móvil Flutter. UNAC, Medellín 2021 -2
 
 ## Inicializar proyecto
-* Hacer git clone del proyecto: `git clone  https://github.com/JesielPalacios/parcial_prog_movil`
 
-* Tener configurado el entorno y el emulador.
+- Hacer git clone del proyecto: `git clone https://github.com/JesielPalacios/CalculadorApp`
 
-* Correr por consola el comando: `flutter run .`
+- Tener configurado el entorno y el emulador.
+
+- Correr por consola el comando: `flutter run .`
 
 ## Empezando
 
