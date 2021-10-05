@@ -1,6 +1,6 @@
-# Caculadora de operaciones binarias.
+# CalculadorApp Binaria.
 
-Parcial de programación móvil desarrollado en el framework móvil Flutter. UNAC, Medellín 2021 -2
+Esta es una caculadora de operaciones binarias desarrollada en dart con el framework móvil Flutter. UNAC, Medellín 2021 -2
 
 ## Inicializar proyecto
 * Hacer git clone del proyecto: `git clone  https://github.com/JesielPalacios/parcial_prog_movil`
