@@ -18,11 +18,11 @@ class _EstructuraConversiones extends State<EstructuraConversiones> {
     setState(() {
       if (tipo == 'decimal') {
         inputBinarios.text = int.parse(value).toRadixString(2).padLeft(4, '0');
-        inputOctales.text = int.parse(value).toRadixString(16);
+        inputOctales.text = int.parse(value).toRadixString(8);
         inputHexadecimales.text = int.parse(value).toRadixString(16);
       } else if (tipo == 'binario') {
         inputDecimales.text = int.parse(value, radix: 2).toString();
-        inputOctales.text = int.parse(value, radix: 2).toRadixString(16);
+        inputOctales.text = int.parse(value, radix: 2).toRadixString(8);
         inputHexadecimales.text = int.parse(value, radix: 2).toRadixString(16);
       } else if (tipo == 'octal') {
         inputDecimales.text = int.parse(value, radix: 16).toString();
@@ -33,7 +33,7 @@ class _EstructuraConversiones extends State<EstructuraConversiones> {
         inputDecimales.text = int.parse(value, radix: 16).toString();
         inputBinarios.text =
             int.parse(value, radix: 16).toRadixString(2).padLeft(4, '0');
-        inputOctales.text = int.parse(value, radix: 16).toRadixString(16);
+        inputOctales.text = int.parse(value, radix: 16).toRadixString(8);
       }
     });
   }
