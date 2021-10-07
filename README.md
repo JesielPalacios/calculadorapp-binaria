@@ -4,7 +4,7 @@ Esta es una caculadora de operaciones binarias desarrollada en dart con el frame
 
 ## Inicializar proyecto
 
-- Hacer git clone del proyecto: `git clone https://github.com/JesielPalacios/CalculadorApp`
+- Hacer git clone del proyecto: `git clone https://github.com/JesielPalacios/calculadorapp-binaria`
 
 - Tener configurado el entorno y el emulador.
 
