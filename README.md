@@ -11,7 +11,7 @@ Esta es una caculadora de operaciones binarias desarrollada en dart con el frame
 - Correr por consola el comando: `flutter run .`
 
 # Demostración:
-![Imágen de la primera pantalla de la aplicación: Conversiones entre números decimales, binarios, octales y hexadecimales](https://github.com/JesielPalacios/css-grid_vs_flexbox/blob/main/img/thumb.png)
+![Imágen de la primera pantalla de la aplicación: Conversiones entre números decimales, binarios, octales y hexadecimales](https://github.com/JesielPalacios/calculadorapp-binaria/blob/main/img/pagina1.png)
 
 ## Empezando
 
