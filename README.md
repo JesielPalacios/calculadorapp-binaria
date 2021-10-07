@@ -1,4 +1,4 @@
-# CalculadorApp Binaria.
+# CalculadorApp Binaria
 
 Esta es una caculadora de operaciones binarias desarrollada en dart con el framework móvil Flutter. UNAC, Medellín 2021 -2
 
@@ -9,6 +9,9 @@ Esta es una caculadora de operaciones binarias desarrollada en dart con el frame
 - Tener configurado el entorno y el emulador.
 
 - Correr por consola el comando: `flutter run .`
+
+# Demostración:
+![Imágen de la primera pantalla de la aplicación: Conversiones entre números decimales, binarios, octales y hexadecimales](https://github.com/JesielPalacios/css-grid_vs_flexbox/blob/main/img/thumb.png)
 
 ## Empezando
 
