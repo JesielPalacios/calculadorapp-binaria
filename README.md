@@ -11,11 +11,16 @@ Esta es una caculadora de operaciones binarias desarrollada en dart con el frame
 - Correr por consola el comando: `flutter run .`
 
 # Demostración:
-![Imágen de la primera pantalla de la aplicación: Conversiones entre números decimales, binarios, octales y hexadecimales](/img/pagina1.png)
+A continuación imágenes de cómo se ve la aplicación móvil una vez instalada:
 
-![Imágen de la primera pantalla de la aplicación: Conversiones entre números decimales, binarios, octales y hexadecimales](/img/Group1.png)
+- Imágen de la primera pantalla de la aplicación: Conversiones entre números decimales, binarios, octales y hexadecimales
+![Imágen de la primera pantalla de la aplicación: Conversiones entre números decimales, binarios, octales y hexadecimales:](/img/pagina1.png)
 
-![Imágen de la primera pantalla de la aplicación: Conversiones entre números decimales, binarios, octales y hexadecimales](https://github.com/JesielPalacios/calculadorapp-binaria/blob/main/img/pagina1.png)
+- Imágen de la segunda pantalla de la aplicación: Operaciones de suma y resta entre binarios
+![Imágen de la segunda pantalla de la aplicación: Operaciones de suma y resta entre binarios:](/img/pagina2.png)
+
+- Imágen de la tercera pantalla de la aplicación: Operaciones lógicas entre binarios (AND, OR, XOR)
+![Imágen de la tercera pantalla de la aplicación: Operaciones lógicas entre binarios (AND, OR, XOR):](/img/pagina3.png)
 
 ## Empezando
 
